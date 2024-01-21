@@ -47,7 +47,7 @@ const ConcertsScreen = () => {
 
 
   return (<>
-    <ScrollView style={{ paddingLeft: '3%', paddingRight: '3%' }}>
+    <View style={{ paddingLeft: '3%', paddingRight: '3%' }}>
 
       <View style={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center' }}>
 
@@ -68,9 +68,6 @@ const ConcertsScreen = () => {
         <Button onPress={() => searchByDate()} mode="contained">Tarih Aralığına Göre Ara</Button>
         <Button onPress={() => setconcerts(concertsList)}>Filtre Temizle</Button>
       </View>
-
-
-
       <DatePicker
         modal
         open={open}
@@ -100,7 +97,6 @@ const ConcertsScreen = () => {
 
       />
 
-
       <Divider style={{ marginBottom: '2%' }} />
 
 
@@ -127,7 +123,7 @@ const ConcertsScreen = () => {
 
 
 
-    </ScrollView>
+    </View>
 
 
   </>)

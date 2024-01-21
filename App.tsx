@@ -3,13 +3,71 @@ import React from 'react'
 import ConcertsScreen from './src/screens/ConcertsScreen'
 import ProductsScreen from './src/screens/ProductsScreen'
 import AddSupplierScreen from './src/screens/AddSupplierScreen'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import FavoritesScreen from './src/screens/FavoritesScreen'
+import NotificationScreen from './src/screens/NotificationScreen'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+
+
+
+const Tab = createBottomTabNavigator();
 
 const App = () => {
 
   return (
-    <SafeAreaView>
-      <AddSupplierScreen/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Tab.Navigator
+          screenOptions={
+            {
+              headerShown: true
+            }
+          }
+        >
+          <Tab.Screen
+            name="Concerts"
+            component={ConcertsScreen} 
+            options={{
+              tabBarLabel: 'Concerts',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="music" color={color} size={size} />
+              ),
+            }}
+
+            />
+
+          <Tab.Screen
+            name="Favorites"
+            component={FavoritesScreen} 
+            
+            options={{
+              tabBarLabel: 'Favorites',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="star" color={color} size={size} />
+              ),
+            }}
+
+            />
+
+          <Tab.Screen
+            name="Notification"
+            component={NotificationScreen} 
+            
+            options={{
+              tabBarLabel: 'Notification',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="bell" color={color} size={size} />
+              ),
+            }}
+            
+            />
+
+        </Tab.Navigator>
+      </SafeAreaView>
+
+    </NavigationContainer>
+
   )
 
 }
