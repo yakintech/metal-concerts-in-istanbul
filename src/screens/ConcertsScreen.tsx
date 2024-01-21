@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import { Button, Card, Divider, TextInput } from 'react-native-paper'
 import { concertsList } from '../data/concertsList'
@@ -110,20 +110,20 @@ const ConcertsScreen = () => {
         style={{ marginBottom: '2%' }}
       />
 
-      {
-        concerts.map((item, index) => {
 
-          return <Card key={item.id}>
+      <FlatList
+        data={concerts}
+        renderItem={({ item }) => <>
+          <Card key={item.id}>
             <Card.Cover source={{ uri: item.image }} />
             <Card.Title titleStyle={{ fontSize: 25 }} title={item.name} subtitle={item.date} />
             <Card.Content>
               <Text>{item.description}</Text>
             </Card.Content>
           </Card>
+        </>}
 
-        }
-        )
-      }
+      />
 
 
 
