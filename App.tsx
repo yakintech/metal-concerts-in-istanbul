@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
-import ConcertsScreen from './src/screens/ConcertsScreen'
+import ConcertsScreen from './src/screens/concert/ConcertsScreen'
 import ProductsScreen from './src/screens/ProductsScreen'
 import AddSupplierScreen from './src/screens/AddSupplierScreen'
 import { NavigationContainer } from '@react-navigation/native'
@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import FavoritesScreen from './src/screens/FavoritesScreen'
 import NotificationScreen from './src/screens/NotificationScreen'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import ConcertStackScreen from './src/screens/concert'
 
 
 
@@ -26,13 +27,14 @@ const App = () => {
           }
         >
           <Tab.Screen
-            name="Concerts"
-            component={ConcertsScreen} 
+            name="ConcertsStack"
+            component={ConcertStackScreen} 
             options={{
               tabBarLabel: 'Concerts',
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="music" color={color} size={size} />
               ),
+              headerTitle: 'Konserler'
             }}
 
             />

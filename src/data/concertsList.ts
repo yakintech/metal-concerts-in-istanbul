@@ -3,7 +3,7 @@ export const concertsList = [
         id:1,
         name: 'Cem Adrian',
         description: 'Description 1',
-        date: '22-01-2024',
+        date: '22-01-2024 20:00',
         image: 'https://picsum.photos/200/300',
         link: 'https://www.google.com',
         location: 'Paris'
@@ -12,7 +12,7 @@ export const concertsList = [
         id:2,
         name: 'Manuş Baba',
         description: 'Description 2',
-        date: '24-01-2024',
+        date: '24-01-2024 21:00',
         image: 'https://picsum.photos/200/300',
         link: 'https://www.google.com',
         location: 'Paris'
@@ -21,7 +21,7 @@ export const concertsList = [
         id:3,
         name: 'Hayko Cepkin',
         description: 'Description 3',
-        date: '24-01-2024',
+        date: '24-01-2024 23:00',
 
         image: 'https://picsum.photos/200/300',
         link: 'https://www.google.com',
@@ -31,7 +31,7 @@ export const concertsList = [
         id:4,
         name: 'Concert 4',
         description: 'Description 4',
-        date: '04-02-2024',
+        date: '04-02-2024 15:00',
         image: 'https://picsum.photos/200/300',
         link: 'https://www.google.com',
         location: 'Paris'
@@ -40,7 +40,7 @@ export const concertsList = [
         id:5,
         name: 'Concert 5',
         description: 'Description 5',
-        date: '14-02-2024',
+        date: '14-02-2024 12:00',
         image: 'https://picsum.photos/200/300',
         link: 'https://www.google.com',
         location: 'Paris'
@@ -50,4 +50,4 @@ export const concertsList = [
 
 
 // 22.01.2020 -> day, month, year
-// USA Date Format => 01/22/2020  -> day, month, year
+// 24 Ocak 2024 Perşembe 20:00

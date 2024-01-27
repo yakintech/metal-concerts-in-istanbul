@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import { Button, Card, Divider, TextInput } from 'react-native-paper'
-import { concertsList } from '../data/concertsList'
+import { concertsList } from '../../data/concertsList'
 import DatePicker from 'react-native-date-picker'
 import dayjs from 'dayjs'
 import 'dayjs/locale/tr'
@@ -109,15 +109,20 @@ const ConcertsScreen = () => {
 
       <FlatList
         data={concerts}
-        renderItem={({ item }) => <>
-          <Card key={item.id}>
-            <Card.Cover source={{ uri: item.image }} />
-            <Card.Title titleStyle={{ fontSize: 25 }} title={item.name} subtitle={item.date} />
-            <Card.Content>
-              <Text>{item.description}</Text>
-            </Card.Content>
-          </Card>
-        </>}
+        renderItem={({ item }) => {
+          item.date = dayjs(item.date, "DD-MM-YYYY").format('DD MMMM dddd HH:mm')
+
+          return <>
+            <Card key={item.id}>
+              <Card.Cover source={{ uri: item.image }} />
+              <Card.Title titleStyle={{ fontSize: 25 }} title={item.name} subtitle={item.date} />
+              <Card.Content>
+                <Text>{item.description}</Text>
+              </Card.Content>
+            </Card>
+          </>
+        }
+        }
 
       />
 
@@ -130,3 +135,19 @@ const ConcertsScreen = () => {
 }
 
 export default ConcertsScreen
+
+
+
+var name = "Çağatay" //string
+var age = 24 //number
+var isMarried = false //boolean
+
+var myArray = [1, 2, 3, 4, 5] //array
+
+var myObject = {
+  name: "Çağatay",
+  age: 24,
+  isMarried: false
+} //object
+
+
