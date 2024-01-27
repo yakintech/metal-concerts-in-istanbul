@@ -13,7 +13,7 @@ const ConcertStackScreen = () => {
         <ConcertStack.Navigator
             screenOptions={
                 {
-                    headerShown: false
+                    headerShown: true
                 }
             }
         >

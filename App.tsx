@@ -5,10 +5,11 @@ import ProductsScreen from './src/screens/ProductsScreen'
 import AddSupplierScreen from './src/screens/AddSupplierScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import FavoritesScreen from './src/screens/FavoritesScreen'
-import NotificationScreen from './src/screens/NotificationScreen'
+import NotificationScreen from './src/screens/notification/NotificationScreen'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import ConcertStackScreen from './src/screens/concert'
+import FavoritesStackScreen from './src/screens/favorites'
+import NotificationStackScreen from './src/screens/notification'
 
 
 
@@ -22,7 +23,7 @@ const App = () => {
         <Tab.Navigator
           screenOptions={
             {
-              headerShown: true
+              headerShown: false
             }
           }
         >
@@ -33,15 +34,14 @@ const App = () => {
               tabBarLabel: 'Concerts',
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="music" color={color} size={size} />
-              ),
-              headerTitle: 'Konserler'
+              )
             }}
 
             />
 
           <Tab.Screen
-            name="Favorites"
-            component={FavoritesScreen} 
+            name="FavoritesStack"
+            component={FavoritesStackScreen} 
             
             options={{
               tabBarLabel: 'Favorites',
@@ -53,8 +53,8 @@ const App = () => {
             />
 
           <Tab.Screen
-            name="Notification"
-            component={NotificationScreen} 
+            name="NotificationStack"
+            component={NotificationStackScreen} 
             
             options={{
               tabBarLabel: 'Notification',

@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, FlatList } from 'react-native'
+import { View, Text, ScrollView, FlatList, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { Button, Card, Divider, TextInput } from 'react-native-paper'
 import { concertsList } from '../../data/concertsList'
@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/tr'
 
 
-const ConcertsScreen = () => {
+const ConcertsScreen = ({ navigation }: any) => {
 
   dayjs.locale('tr')
 
@@ -113,13 +113,18 @@ const ConcertsScreen = () => {
           item.date = dayjs(item.date, "DD-MM-YYYY").format('DD MMMM dddd HH:mm')
 
           return <>
-            <Card key={item.id}>
-              <Card.Cover source={{ uri: item.image }} />
-              <Card.Title titleStyle={{ fontSize: 25 }} title={item.name} subtitle={item.date} />
-              <Card.Content>
-                <Text>{item.description}</Text>
-              </Card.Content>
-            </Card>
+            <Pressable onPress={() => navigation.navigate("ConcertDetail", {
+              item: item
+            }) }>
+              <Card key={item.id}>
+                <Card.Cover source={{ uri: item.image }} />
+                <Card.Title titleStyle={{ fontSize: 25 }} title={item.name} subtitle={item.date} />
+                <Card.Content>
+                  <Text>{item.description}</Text>
+                </Card.Content>
+              </Card>
+            </Pressable>
+
           </>
         }
         }
