@@ -1,6 +1,7 @@
 import { View, Text, FlatList } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { axiosInstance } from '../api/axiosInstance'
 
 const ProductsScreen = () => {
     //State herhangi bir değişiklik olduğunda componentin tekrar render edilmesini sağlar.
@@ -9,7 +10,7 @@ const ProductsScreen = () => {
 
     //useEffect sadece bir kere çalışır. Component ilk render edildiğinde çalışır. O ekranın açılması için gerekli olan verileri çekmek için kullanılır.
     useEffect(() => {
-        axios.get("https://northwind.vercel.app/api/products")
+        axiosInstance.get('products')
             .then(res => {
                 setproducts(res.data)
             })

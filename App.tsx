@@ -10,12 +10,18 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ConcertStackScreen from './src/screens/concert'
 import FavoritesStackScreen from './src/screens/favorites'
 import NotificationStackScreen from './src/screens/notification'
+import { useTranslation } from 'react-i18next';
 
 
 
 const Tab = createBottomTabNavigator();
 
 const App = () => {
+
+  const { t, i18n } = useTranslation();
+
+
+
 
   return (
     <NavigationContainer>
@@ -31,7 +37,7 @@ const App = () => {
             name="ConcertsStack"
             component={ConcertStackScreen} 
             options={{
-              tabBarLabel: 'Concerts',
+              tabBarLabel: t('concerts'),
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="music" color={color} size={size} />
               )
@@ -44,7 +50,7 @@ const App = () => {
             component={FavoritesStackScreen} 
             
             options={{
-              tabBarLabel: 'Favorites',
+              tabBarLabel: t('favorites') ,
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="star" color={color} size={size} />
               ),
@@ -57,7 +63,7 @@ const App = () => {
             component={NotificationStackScreen} 
             
             options={{
-              tabBarLabel: 'Notification',
+              tabBarLabel: t('notifications') ,
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="bell" color={color} size={size} />
               ),
